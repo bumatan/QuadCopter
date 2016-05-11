@@ -12,11 +12,12 @@ class qcServer:
 
 	def startListening(self): # Accepting client connection .
 		print 'Listening ...'
-		conn, addr = self.serverSocket.accept()
+		self.conn, addr = self.serverSocket.accept()
 		print 'Connected with ' + addr[0] + ':' + str(addr[1])
 
+
 	def getPackets(self): # Start recieving packets from the client
-		data = self.conn.recv()
+		data = self.conn.recv(1024)
 		return data
 
 
