@@ -1,5 +1,21 @@
 import socket
 import sys
+import CommandParser
+import CommandMaker
+import treading
+
+def openServerThread(serverHandler):
+	serverThread = threading.Thread(target= serverCatchPackets, args=(serverHandler,))
+	return serverThread
+
+def serverCatchPackets(serverHandler):
+	if Server.startListening() == 1: #Start Listening
+		try:
+			while True:
+				Commands = CommandParser.getCommand(serverHandler)
+				CommandMaker.controlCommands(Commands)	#doCommands
+		except Exception:
+			return -1
 
 class qcServer:
 
@@ -14,6 +30,7 @@ class qcServer:
 		print 'Listening ...'
 		self.conn, addr = self.serverSocket.accept()
 		print 'Connected with ' + addr[0] + ':' + str(addr[1])
+		return 1
 
 
 	def getPackets(self): # Start recieving packets from the client
