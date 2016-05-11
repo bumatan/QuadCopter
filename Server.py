@@ -2,7 +2,6 @@ import socket
 
 class qcServer:
 
-
 	def __init__(self, port):
 		self.port = port 
 
@@ -15,6 +14,10 @@ class qcServer:
 		print 'Listening ...'
 		conn, addr = self.serverSocket.accept()
 		print 'Connected with ' + addr[0] + ':' + str(addr[1])
+
+	def getPackets(self): # Start recieving packets from the client
+		data = self.conn.recv()
+		return data
 
 
 	def closeServer(self): # Closing .. 
