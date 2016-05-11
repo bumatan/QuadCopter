@@ -1,10 +1,10 @@
 import socket
+import sys
 
 class qcServer:
 
 	def __init__(self, port):
 		self.port = port 
-
 		self.serverSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # Setting the socket . 
 		self.serverSocket.bind((socket.gethostname(), port)) # Setting the socket as Server .
 		self.serverSocket.listen(1) # Listening to only 1 connection .
