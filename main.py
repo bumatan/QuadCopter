@@ -6,6 +6,7 @@ import CommandMaker
 
 def serverTesting(): # only for testing .
 	
+<<<<<<< HEAD
 	#configuration
 	Server = Server.qcServer(8080)
 	Server.startListening() #Start Listening
@@ -18,6 +19,11 @@ def serverTesting(): # only for testing .
 
 
 	server.close()
+=======
+	server.startListening()
+	print server.getPackets()
+	#server.close()
+>>>>>>> c7f0dc913494cdc159e72dbc3192ab4173d5446d
 
 serverTesting()
 
