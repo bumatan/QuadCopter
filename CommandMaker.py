@@ -7,5 +7,5 @@ def controlCommands(CommandsDict):
 			callCommand(Command, Value)
 
 def callCommand(Command, Value): #Calls the right command
-	if Command = Forward:
+	if Command == Forward:
 		FlyForward(Value) 

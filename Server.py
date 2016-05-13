@@ -2,14 +2,14 @@ import socket
 import sys
 import CommandParser
 import CommandMaker
-import treading
+import threading
 
 def openServerThread(serverHandler):
 	serverThread = threading.Thread(target= serverCatchPackets, args=(serverHandler,))
 	return serverThread
 
 def serverCatchPackets(serverHandler):
-	if Server.startListening() == 1: #Start Listening
+	if serverHandler.startListening() == 1: #Start Listening
 		try:
 			while True:
 				Commands = CommandParser.getCommand(serverHandler)
