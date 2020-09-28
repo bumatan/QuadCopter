@@ -1,1 +1,1 @@
-RPi==0.3.0
+git+https://github.com/nosix/raspberry-gpio-emulator==0.3.0
