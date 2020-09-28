@@ -4,7 +4,7 @@ class Motor(object):
     """
     Object for all the commands you want to do on a motor.
     """
-    def __init__(self, channel,rotationDirection="clockwise"):
+    def __init__(self, channel, rotationDirection="clockwise"):
         """
         Inits the motor configuration.
         """
