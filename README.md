@@ -1,6 +1,5 @@
 # QuadCopter
 Matan and Daniel project
 
-## Running tests
-Required packages
-1. RPI Emulator - "pip install git+https://github.com/nosix/raspberry-gpio-emulator/"
+## Installing dev environment
+After checking out. use the command - "pip3 install -r .\dev-requirements.pip"

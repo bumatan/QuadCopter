@@ -1,4 +1,4 @@
-import RPi.GPIO as GPIO #TODO delete this when you add a test file
+#from RPi.GPIO import GPIO #TODO delete this when you add a test file
 
 class Motor(object):
     """
@@ -14,10 +14,10 @@ class Motor(object):
         self.frequency = 0.5 # TODO test some frequencey configurations
         
         # Set the GPIO Module
-        GPIO.setmode(GPIO.BOARD)
-        GPIO.setup(self.channel, GPIO.OUT)
-        self.motorPWM = GPIO.PWM(self.channel, self.frequency)
-        self.motorPWM.start(self.motorValue)
+        #GPIO.setmode(GPIO.BOARD)
+        #GPIO.setup(self.channel, GPIO.OUT)
+        #self.motorPWM = GPIO.PWM(self.channel, self.frequency)
+        #self.motorPWM.start(self.motorValue)
 
     def setValue(self, value):
         """
@@ -47,4 +47,10 @@ class Motor(object):
         """
         Apply the value set to the motor
         """
-        self.motorPWM.ChangeDutyCycle(self.motorValue)    
+        #self.motorPWM.ChangeDutyCycle(self.motorValue)
+
+    def getMotorValue(self):
+        """
+        docstring
+        """
+        return self.motorValue
